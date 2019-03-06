@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+umask "${UMASK}"
+
+exec s6-setuidgid hotio python "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}/app"
