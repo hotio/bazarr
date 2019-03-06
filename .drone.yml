@@ -11,7 +11,7 @@ steps:
   image: koalaman/shellcheck-alpine
   pull: always
   commands:
-    - for file in $(find ./root -type f); do shellcheck $file; done;
+    - for file in $(find ./root -type f -print); do shellcheck $file; done;
 
 - name: build
   image: plugins/docker
