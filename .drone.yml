@@ -24,3 +24,10 @@ steps:
       from_secret: docker_password
     repo: hotio/bazarr
     auto_tag: true
+
+- name: microbadger
+  image: plugins/webhook
+  pull: always
+  settings:
+    urls:
+      - https://hooks.microbadger.com/images/hotio/bazarr/_cStXTbYccGUvH2DVzc21w02-3s=
