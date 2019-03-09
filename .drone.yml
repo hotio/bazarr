@@ -24,6 +24,7 @@ steps:
       from_secret: docker_password
     repo: hotio/bazarr
     auto_tag: true
+    cache_from: "hotio/bazarr"
 
 - name: microbadger
   image: plugins/webhook
