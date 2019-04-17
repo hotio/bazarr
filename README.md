@@ -1,11 +1,5 @@
 # [Bazarr](https://github.com/morpheus65535/bazarr)
 
-## Support on Beerpay
-
-Hey dude! Help me out for a couple of :beers:!
-
-[![Beerpay](https://beerpay.io/hotio/docker-bazarr/badge.svg)](https://beerpay.io/hotio/docker-bazarr)
-
 ## Donations
 
 NANO: `xrb_1bxqm6nsm55s64rgf8f5k9m795hda535to6y15ik496goatakpupjfqzokfc`  
