@@ -9,10 +9,10 @@ HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:6767 || exit 1
 # install packages
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
-        python-pip python-setuptools python-dev build-essential && \
+        python-pip python-setuptools python-dev python-libxml2 build-essential && \
     pip --no-cache-dir install gevent==1.4.0 lxml==4.3.0 && \
 # clean up
-    apt purge -y python-pip python-setuptools python-dev build-essential && \
+    apt purge -y python-pip python-setuptools python-dev python-libxml2 build-essential && \
     apt autoremove -y && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
