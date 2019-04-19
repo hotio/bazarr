@@ -1,10 +1,16 @@
+---
 kind: pipeline
-name: default
+name: develop
+
+platform:
+  os: linux
+  arch: amd64
 
 trigger:
   event:
     exclude:
       - pull_request
+      - tag
 
 steps:
 - name: shellcheck
@@ -23,12 +29,60 @@ steps:
     password:
       from_secret: docker_password
     repo: hotio/bazarr
-    auto_tag: true
-    cache_from: "hotio/bazarr"
+    cache_from: hotio/bazarr:develop
+    build_args:
+      - ARCH_BAZARR=none
+    tags:
+      - develop
 
-- name: microbadger
-  image: plugins/webhook
+---
+kind: pipeline
+name: release-amd64
+
+platform:
+  os: linux
+  arch: amd64
+
+trigger:
+  event:
+    - tag
+
+steps:
+- name: build
+  image: plugins/docker
   pull: always
   settings:
-    urls:
-      - https://hooks.microbadger.com/images/hotio/bazarr/_cStXTbYccGUvH2DVzc21w02-3s=
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: hotio/bazarr
+    cache_from: hotio/bazarr
+    build_args:
+      - ARCH_BAZARR=none
+    tags:
+      - ${DRONE_TAG}-amd64
+
+---
+kind: pipeline
+name: manifest
+
+trigger:
+  event:
+    - tag
+
+steps:
+- name: manifest
+  image: plugins/manifest
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    target: hotio/bazarr
+    template: ${DRONE_TAG}-ARCH
+    platforms:
+      - linux/amd64
+
+depends_on:
+  - release-amd64
