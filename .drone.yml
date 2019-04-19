@@ -61,7 +61,7 @@ steps:
     build_args:
       - ARCH_BAZARR=none
     tags:
-      - ${DRONE_TAG}-amd64
+      - ${DRONE_TAG}-linux-amd64
 
 ---
 kind: pipeline
@@ -80,7 +80,7 @@ steps:
     password:
       from_secret: docker_password
     target: hotio/bazarr:latest
-    template: hotio/bazarr:${DRONE_TAG}-ARCH
+    template: hotio/bazarr:${DRONE_TAG}-OS-ARCH
     platforms:
       - linux/amd64
 
