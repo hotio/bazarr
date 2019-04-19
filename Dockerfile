@@ -9,7 +9,7 @@ HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:6767 || exit 1
 # install packages
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
-        python-pip python-setuptools python-dev && \
+        python-pip python-setuptools python-dev build-essential && \
     pip --no-cache-dir install gevent && \
 # clean up
     apt autoremove -y && \
