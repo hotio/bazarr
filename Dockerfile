@@ -10,10 +10,11 @@ HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:6767 || exit 1
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
         python-libxml2 python-lxml \
-        python-pip python-setuptools python-dev build-essential && \
+        python-pip python-setuptools \
+        python-dev build-essential && \
     pip --no-cache-dir install gevent && \
 # clean up
-    apt purge -y python-pip python-setuptools python-dev build-essential && \
+    apt purge -y python-dev build-essential && \
     apt autoremove -y && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
