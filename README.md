@@ -1,5 +1,9 @@
 # [Bazarr](https://github.com/morpheus65535/bazarr)
 
+[![badge](https://images.microbadger.com/badges/image/hotio/bazarr.svg)](https://microbadger.com/images/hotio/bazarr "Get your own image badge on microbadger.com")
+[![badge](https://images.microbadger.com/badges/version/hotio/bazarr.svg)](https://microbadger.com/images/hotio/bazarr "Get your own version badge on microbadger.com")
+[![badge](https://images.microbadger.com/badges/commit/hotio/bazarr.svg)](https://microbadger.com/images/hotio/bazarr "Get your own commit badge on microbadger.com")
+
 ## Donations
 
 NANO: `xrb_1bxqm6nsm55s64rgf8f5k9m795hda535to6y15ik496goatakpupjfqzokfc`  
