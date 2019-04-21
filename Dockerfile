@@ -10,10 +10,10 @@ HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:6767 || exit 1
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
         libxml2 libxslt1.1 \
-        python-pip python-setuptools libxml2-dev libxslt1-dev && \
+        python-pip build-essential python-all-dev python-setuptools libxml2-dev libxslt1-dev && \
     pip --no-cache-dir install gevent==1.4.0 lxml==4.3.0 && \
 # clean up
-    apt purge -y python-pip python-setuptools libxml2-dev libxslt1-dev && \
+    apt purge -y python-pip build-essential python-all-dev python-setuptools libxml2-dev libxslt1-dev && \
     apt autoremove -y && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
