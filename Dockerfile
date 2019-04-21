@@ -8,7 +8,7 @@ HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:6767 || exit 1
 
 # install packages
 RUN apt update && \
-    apt install -y --no-install-suggests \
+    apt install -y --no-install-recommends --no-install-suggests \
         libxml2 libxslt1.1 \
         python-pip libxml2-dev libxslt1-dev && \
     pip --no-cache-dir install gevent==1.4.0 lxml==4.3.0 && \
