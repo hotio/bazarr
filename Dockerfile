@@ -9,10 +9,10 @@ HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:6767 || exit 1
 # install packages
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
-        libxml2 libxslt1.1 \
+        ffmpeg libxml2 libxslt1.1 \
         python-pip build-essential python-all-dev python-setuptools libxml2-dev libxslt1-dev && \
 # https://raw.githubusercontent.com/morpheus65535/bazarr/master/requirements.txt
-    pip --no-cache-dir install gevent==1.4.0 lxml==4.3.0 && \
+    pip --no-cache-dir install gevent==1.4.0 lxml==4.3.0 git+https://github.com/smacke/subsync && \
 # clean up
     apt purge -y python-pip build-essential python-all-dev python-setuptools libxml2-dev libxslt1-dev && \
     apt autoremove -y && \
