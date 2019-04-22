@@ -12,7 +12,8 @@ RUN apt update && \
         ffmpeg libxml2 libxslt1.1 python-setuptools \
         python-pip build-essential python-all-dev libxml2-dev libxslt1-dev && \
 # https://raw.githubusercontent.com/morpheus65535/bazarr/master/requirements.txt
-    pip --no-cache-dir install gevent==1.4.0 lxml==4.3.0 https://github.com/smacke/subsync/archive/master.tar.gz && \
+# https://github.com/smacke/subsync/commits/master
+    pip --no-cache-dir install gevent==1.4.0 lxml==4.3.0 https://github.com/smacke/subsync/archive/691c387c808bcf81a2afd4ca8b666df6346ff634.tar.gz && \
 # clean up
     apt purge -y python-pip build-essential python-all-dev libxml2-dev libxslt1-dev && \
     apt autoremove -y && \
