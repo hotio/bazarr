@@ -21,7 +21,7 @@ RUN apt update && \
 
 # install app
 # https://github.com/morpheus65535/bazarr/releases
-RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/v0.7.5.1.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
+RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/v0.8.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
     chmod -R u=rwX,go=rX "${APP_DIR}"
 
 COPY root/ /
