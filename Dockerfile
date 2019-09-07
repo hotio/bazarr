@@ -2,7 +2,6 @@ FROM hotio/base
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
-ENV APP="Bazarr"
 EXPOSE 6767
 HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:6767 || exit 1
 
