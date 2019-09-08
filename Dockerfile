@@ -1,7 +1,11 @@
 FROM hotio/base
 
 ARG DEBIAN_FRONTEND="noninteractive"
+ARG GIT_COMMIT
+ARG GIT_TAG
+ARG ARCH
 
+ENV GIT_COMMIT="${GIT_COMMIT}" GIT_TAG="${GIT_TAG}" ARCH="${ARCH}"
 ENV APP="Bazarr"
 EXPOSE 6767
 HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:6767 || exit 1
