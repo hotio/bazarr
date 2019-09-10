@@ -1,7 +1,8 @@
-# [docker-bazarr](https://github.com/hotio/docker-bazarr)
+# bazarr
 
-![Docker Pulls](https://img.shields.io/docker/pulls/hotio/bazarr?style=flat-square)
-![Drone (cloud)](https://img.shields.io/drone/build/hotio/docker-bazarr?style=flat-square)
+[![GitHub](https://img.shields.io/badge/source-github-lightgrey?style=flat-square)](https://github.com/hotio/docker-bazarr)
+[![Docker Pulls](https://img.shields.io/docker/pulls/hotio/bazarr?style=flat-square)](https://hub.docker.com/r/hotio/bazarr)
+[![Drone (cloud)](https://img.shields.io/drone/build/hotio/docker-bazarr?style=flat-square)](https://cloud.drone.io/hotio/docker-bazarr)
 
 ## Donations
 
