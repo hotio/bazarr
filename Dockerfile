@@ -1,11 +1,7 @@
 FROM hotio/base
 
 ARG DEBIAN_FRONTEND="noninteractive"
-ARG COMMIT
-ARG TAG
-ARG APP
 
-ENV COMMIT="${COMMIT}" TAG="${TAG}" APP="${APP}"
 EXPOSE 6767
 HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:6767 || exit 1
 
@@ -28,3 +24,9 @@ RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/v0.8.1.tar.gz" |
     chmod -R u=rwX,go=rX "${APP_DIR}"
 
 COPY root/ /
+
+ARG COMMIT
+ARG TAG
+ARG APP
+
+ENV COMMIT="${COMMIT}" TAG="${TAG}" APP="${APP}"
