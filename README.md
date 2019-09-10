@@ -1,8 +1,7 @@
-# [Bazarr](https://github.com/morpheus65535/bazarr)
+# [docker-bazarr](https://github.com/hotio/docker-bazarr)
 
-[![badge](https://images.microbadger.com/badges/image/hotio/bazarr.svg)](https://microbadger.com/images/hotio/bazarr "Get your own image badge on microbadger.com")
-[![badge](https://images.microbadger.com/badges/version/hotio/bazarr.svg)](https://microbadger.com/images/hotio/bazarr "Get your own version badge on microbadger.com")
-[![badge](https://images.microbadger.com/badges/commit/hotio/bazarr.svg)](https://microbadger.com/images/hotio/bazarr "Get your own commit badge on microbadger.com")
+![Docker Pulls](https://img.shields.io/docker/pulls/hotio/bazarr?style=flat-square)
+![Drone (cloud)](https://img.shields.io/drone/build/hotio/docker-bazarr?style=flat-square)
 
 ## Donations
 
