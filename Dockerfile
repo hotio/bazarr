@@ -25,8 +25,5 @@ RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/v0.8.1.tar.gz" |
 
 COPY root/ /
 
-ARG COMMIT
 ARG TAG
-ARG APP
-
-ENV COMMIT="${COMMIT}" TAG="${TAG}" APP="${APP}"
+ENV TAG="${TAG}"
