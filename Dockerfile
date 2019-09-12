@@ -18,12 +18,9 @@ RUN apt update && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-# install app
-# https://github.com/morpheus65535/bazarr/releases
-RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/v0.8.1.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
-    chmod -R u=rwX,go=rX "${APP_DIR}"
-
 COPY root/ /
 
-ARG TAG
-ENV TAG="${TAG}"
+# install app
+RUN version=$(sed -n '1p' /versions/bazarr) && \
+    curl -fsSL "https://github.com/morpheus65535/bazarr/archive/v${version}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
+    chmod -R u=rwX,go=rX "${APP_DIR}"
