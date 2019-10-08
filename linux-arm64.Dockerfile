@@ -21,7 +21,7 @@ RUN apt update && \
 COPY root/ /
 
 # https://github.com/morpheus65535/bazarr/releases
-ENV BAZARR_VERSION=0.8.2.1
+ENV BAZARR_VERSION=0.8.2.2
 
 # install app
 RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/v${BAZARR_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
