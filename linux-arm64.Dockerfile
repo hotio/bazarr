@@ -18,7 +18,7 @@ RUN apt update && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # https://github.com/morpheus65535/bazarr/releases
-ARG BAZARR_VERSION=44ed1ba4fc4d58b2e4d878b36e628b70462d7b38
+ARG BAZARR_VERSION=2602a0550dfadaee2081dbac16eb0760e32535e1
 
 # install app
 RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/${BAZARR_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
