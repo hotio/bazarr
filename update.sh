@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###################
-version=$(curl -fsSL "https://api.github.com/repos/morpheus65535/bazarr/commits/development" | jq -r .sha)
+version=$(curl -fsSL "https://api.github.com/repos/morpheus65535/bazarr/commits/python3" | jq -r .sha)
 app=BAZARR
 ###################
 

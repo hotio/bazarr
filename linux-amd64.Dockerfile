@@ -7,18 +7,17 @@ EXPOSE 6767
 # install packages
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
-        libxml2 libxslt1.1 unrar ffmpeg \
-        python-pip build-essential python-all-dev python-setuptools libxml2-dev libxslt1-dev && \
+        python3 libxml2 libxslt1.1 unrar ffmpeg \
+        python3-pip build-essential python3-all-dev python3-setuptools libxml2-dev libxslt1-dev && \
 # https://raw.githubusercontent.com/morpheus65535/bazarr/master/requirements.txt
-    pip --no-cache-dir install lxml==4.3.0 && \
+    pip3 --no-cache-dir install lxml==4.3.0 && \
 # clean up
-    apt purge -y python-pip build-essential python-all-dev python-setuptools libxml2-dev libxslt1-dev && \
+    apt purge -y python3-pip build-essential python3-all-dev python3-setuptools libxml2-dev libxslt1-dev && \
     apt autoremove -y && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-# https://github.com/morpheus65535/bazarr/releases
-ARG BAZARR_VERSION=2602a0550dfadaee2081dbac16eb0760e32535e1
+ARG BAZARR_VERSION=a36e010d76da197277be287a59f3dd1e2bf7e998
 
 # install app
 RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/${BAZARR_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
