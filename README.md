@@ -26,6 +26,7 @@ The environment variables below are all optional, the values you see are the def
 | latest   | The same as `stable`                 |                                                                                                                                                         |
 | stable   | Stable version                       | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/stable)](https://cloud.drone.io/hotio/docker-bazarr)   |
 | unstable | Unstable version, development branch | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/unstable)](https://cloud.drone.io/hotio/docker-bazarr) |
+| python3  | Unstable version, python3 branch     | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/python3)](https://cloud.drone.io/hotio/docker-bazarr)  |
 
 You can also find tags that reference a commit or version number.
 
