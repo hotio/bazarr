@@ -21,13 +21,13 @@ The environment variables below are all optional, the values you see are the def
 
 ## Tags
 
-| Tag      | Description                                       | Build Status                                                                                                                                            |
-| ---------|---------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| latest   | The same as `stable`                              |                                                                                                                                                         |
-| stable   | Stable version                                    | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/stable)](https://cloud.drone.io/hotio/docker-bazarr)   |
-| unstable | Unstable version, development branch              | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/unstable)](https://cloud.drone.io/hotio/docker-bazarr) |
-| python3  | Unstable version, python3 branch, runs on python3 | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/python3)](https://cloud.drone.io/hotio/docker-bazarr)  |
-| testing  | Unstable version, python3 branch, runs on python2 | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/testing)](https://cloud.drone.io/hotio/docker-bazarr)  |
+| Tag      | Description                                       | Build Status                                                                                                                                            | Last Updated                                                                                           |
+| ---------|---------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| latest   | The same as `stable`                              |                                                                                                                                                         |                                                                                                        |
+| stable   | Stable version                                    | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/stable)](https://cloud.drone.io/hotio/docker-bazarr)   | ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/stable)   |
+| unstable | Unstable version, development branch              | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/unstable)](https://cloud.drone.io/hotio/docker-bazarr) | ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/unstable) |
+| python3  | Unstable version, python3 branch, runs on python3 | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/python3)](https://cloud.drone.io/hotio/docker-bazarr)  | ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/python3)  |
+| testing  | Unstable version, python3 branch, runs on python2 | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/testing)](https://cloud.drone.io/hotio/docker-bazarr)  | ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/testing)  |
 
 You can also find tags that reference a commit or version number.
 
