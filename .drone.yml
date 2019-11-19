@@ -299,6 +299,7 @@ steps:
       from_secret: discord_id
     DISCORD_TOKEN:
       from_secret: discord_token
+    VERSION: ${TAG_VERSION=cf36e8f3b6a3412573c8f38f44241a35690d6dea}
   commands:
     - bash discord.sh
 
