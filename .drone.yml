@@ -269,7 +269,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    target: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${TAG_VERSION=1f8b5bd2e19fee20abd245334c7a72a7913af20d}
+    target: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${TAG_VERSION=672e69e88780d0a0d7e58d1f127662e8f7a9a311}
     template: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}-OS-ARCH
     platforms:
       - linux/amd64
@@ -299,7 +299,7 @@ steps:
       from_secret: discord_id
     DISCORD_TOKEN:
       from_secret: discord_token
-    VERSION: ${TAG_VERSION=1f8b5bd2e19fee20abd245334c7a72a7913af20d}
+    VERSION: ${TAG_VERSION=672e69e88780d0a0d7e58d1f127662e8f7a9a311}
   commands:
     - bash discord.sh
 
