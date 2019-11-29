@@ -17,7 +17,6 @@ RUN apt update && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-# https://github.com/morpheus65535/bazarr/releases
 ARG BAZARR_VERSION=9005077793b9fd1c63ad1112422dddf39cd10bd2
 
 # install app
