@@ -3,8 +3,4 @@
 
 umask "${UMASK}"
 
-if [[ ${DEBUG} == "yes" ]]; then
-    exec s6-setuidgid hotio python "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}/app"
-else
-    exec s6-setuidgid hotio python "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}/app" > /dev/null 2>&1
-fi
+exec s6-setuidgid hotio python "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}/app" > /dev/null 2>&1
