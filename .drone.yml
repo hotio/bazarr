@@ -329,8 +329,7 @@ steps:
     - cd /usr/src/app
     - sleep 50
     - node src/puppeteer.js
-    - curl -fsSL --upload-file /tmp/screenshot.png https://transfer.sh/${DRONE_REPO_NAME##docker-}_${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}.png >> /tmp/output.log
-    - cat /tmp/output.log
+    - curl -F'file=@/tmp/screenshot.png' https://0x0.st
 
 services:
 - name: service
