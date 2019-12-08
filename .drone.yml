@@ -305,3 +305,39 @@ steps:
 
 depends_on:
   - manifest
+
+---
+kind: pipeline
+name: screenshot
+
+platform:
+  os: linux
+  arch: amd64
+
+trigger:
+  event:
+    - push
+
+steps:
+- name: screenshot
+  image: zenika/alpine-chrome:with-puppeteer
+  pull: always
+  user: root
+  commands:
+    - apk add --no-cache curl@edge
+    - mv puppeteer.js /usr/src/app/src/puppeteer.js
+    - cd /usr/src/app
+    - sleep 50
+    - node src/puppeteer.js
+    - curl -fsSL --upload-file /tmp/screenshot.png https://transfer.sh/${DRONE_REPO_NAME##docker-}_${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}.png >> /tmp/output.log
+    - cat /tmp/output.log
+
+services:
+- name: service
+  image: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}-${DRONE_STAGE_OS}-${DRONE_STAGE_ARCH}
+  pull: always
+
+depends_on:
+  - linux-amd64-test
+  - linux-arm64-test
+  - linux-arm-test
