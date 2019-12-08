@@ -325,7 +325,7 @@ steps:
   user: root
   commands:
     - apk add --no-cache curl@edge
-    - sleep 30
+    - sleep 50
     - mv puppeteer.js /usr/src/app/src/puppeteer.js && cd /usr/src/app && node src/puppeteer.js
     - curl -fsSL -F'file=@/tmp/screenshot.png' https://0x0.st
 
