@@ -2,6 +2,7 @@
 
 if [[ ${1} == "screenshot" ]]; then
     SERVICE_IP="http://$(dig +short service):6767"
+    NETWORK_IDLE="0"
     cd /usr/src/app && node <<EOF
 const puppeteer = require('puppeteer');
 
@@ -19,11 +20,11 @@ const puppeteer = require('puppeteer');
   });
   const page = await browser.newPage();
   await page.setViewport({ width: 1920, height: 1080 });
-  await page.goto("${SERVICE_IP}", { waitUntil: "networkidle0" });
+  await page.goto("${SERVICE_IP}", { waitUntil: "networkidle${NETWORK_IDLE}" });
   await page.evaluate(() => {
     const div = document.createElement('div');
-    div.innerHTML = 'Image: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}, Commit: ${DRONE_COMMIT_SHA:0:7}, Build: #${DRONE_BUILD_NUMBER}';
-    div.style.cssText = "padding: 5px; color: white; position: fixed; bottom: 10px; right: 10px; background: green; z-index: 10000";
+    div.innerHTML = 'Image: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}<br>Commit: ${DRONE_COMMIT_SHA:0:7}<br>Build: #${DRONE_BUILD_NUMBER}<br>Timestamp: $(date -u --iso-8601=seconds)';
+    div.style.cssText = "font-weight: normal; font-size: 12px; font-family: consolas; padding: 5px; color: white; position: fixed; bottom: 10px; right: 10px; background: DODGERBLUE; z-index: 10000";
     document.body.appendChild(div);
   });
   await page.screenshot({ path: "/drone/src/screenshot.png", fullPage: true });

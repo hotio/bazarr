@@ -293,9 +293,6 @@ steps:
     - apk add --no-cache curl@edge bind-tools@edge bash@edge
     - bash update.sh checkservice
     - bash update.sh screenshot
-  when:
-    status:
-    - success
   failure: ignore
 
 - name: discord
@@ -317,9 +314,6 @@ services:
   pull: always
   environment:
     DEBUG: yes
-  when:
-    status:
-    - success
 
 depends_on:
   - manifest
