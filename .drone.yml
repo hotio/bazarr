@@ -48,9 +48,6 @@ depends_on:
 kind: pipeline
 name: linux-amd64-test
 
-clone:
-  disable: true
-
 platform:
   os: linux
   arch: amd64
@@ -110,9 +107,6 @@ depends_on:
 kind: pipeline
 name: linux-arm64-test
 
-clone:
-  disable: true
-
 platform:
   os: linux
   arch: arm64
@@ -171,9 +165,6 @@ depends_on:
 ---
 kind: pipeline
 name: linux-arm-test
-
-clone:
-  disable: true
 
 platform:
   os: linux
