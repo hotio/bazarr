@@ -24,7 +24,7 @@ const puppeteer = require('puppeteer');
   await page.evaluate(() => {
     const div = document.createElement('div');
     div.innerHTML = 'Image: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}<br>Commit: ${DRONE_COMMIT_SHA:0:7}<br>Build: #${DRONE_BUILD_NUMBER}<br>Timestamp: $(date -u --iso-8601=seconds)';
-    div.style.cssText = "font-weight: normal; font-size: 20px; font-family: monospace; padding: 5px; color: white; position: fixed; bottom: 10px; right: 10px; background: DODGERBLUE; z-index: 10000";
+    div.style.cssText = "all: initial; font-weight: normal; font-size: normal; font-family: monospace; padding: 5px; color: white; position: fixed; bottom: 10px; right: 10px; background: DODGERBLUE; z-index: 10000";
     document.body.appendChild(div);
   });
   await page.screenshot({ path: "/drone/src/screenshot.png", fullPage: true });
