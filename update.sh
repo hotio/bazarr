@@ -35,7 +35,7 @@ elif [[ ${1} == "checkservice" ]]; then
     SERVICE="http://service:6767"
     currenttime=$(date +%s); maxtime=$((currenttime+60)); while (! curl -fsSL ${SERVICE} > /dev/null) && [[ "$currenttime" -lt "$maxtime" ]]; do sleep 1; currenttime=$(date +%s); done
     curl -fsSL ${SERVICE} > /dev/null
-elif [[ ${1} == "checkpackages" ]]; then
+elif [[ ${1} == "checkdigests" ]]; then
     docker pull hotio/base:stable-linux-arm64
     docker pull hotio/base:stable-linux-arm
     docker pull hotio/base:stable-linux-amd64
