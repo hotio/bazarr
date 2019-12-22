@@ -36,10 +36,12 @@ elif [[ ${1} == "checkservice" ]]; then
     currenttime=$(date +%s); maxtime=$((currenttime+60)); while (! curl -fsSL ${SERVICE} > /dev/null) && [[ "$currenttime" -lt "$maxtime" ]]; do sleep 1; currenttime=$(date +%s); done
     curl -fsSL ${SERVICE} > /dev/null
 elif [[ ${1} == "checkpackages" ]]; then
-    docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-    docker run --rm -v "${GITHUB_WORKSPACE}":/github -t hotio/base:stable-linux-arm64 bash -c 'apt list --installed > /github/upstream_packages.arm64.txt'
-    docker run --rm -v "${GITHUB_WORKSPACE}":/github -t hotio/base:stable-linux-arm   bash -c 'apt list --installed > /github/upstream_packages.arm.txt'
-    docker run --rm -v "${GITHUB_WORKSPACE}":/github -t hotio/base:stable-linux-amd64 bash -c 'apt list --installed > /github/upstream_packages.amd64.txt'
+    docker pull hotio/base:stable-linux-arm64
+    docker pull hotio/base:stable-linux-arm
+    docker pull hotio/base:stable-linux-amd64
+    docker inspect --format='{{index .RepoDigests 0}}' hotio/base:stable-linux-arm64 >  upstream_digests.txt
+    docker inspect --format='{{index .RepoDigests 0}}' hotio/base:stable-linux-arm   >> upstream_digests.txt
+    docker inspect --format='{{index .RepoDigests 0}}' hotio/base:stable-linux-amd64 >> upstream_digests.txt
 else
     version=$(curl -fsSL "https://api.github.com/repos/morpheus65535/bazarr/releases/latest" | jq -r .tag_name | sed s/v//g)
     [[ -z ${version} ]] && exit
