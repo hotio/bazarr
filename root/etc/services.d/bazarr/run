@@ -11,4 +11,4 @@ redirect_cmd() {
     fi
 }
 
-redirect_cmd exec s6-setuidgid hotio python "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}/app"
+redirect_cmd exec s6-setuidgid hotio python3 "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}/app"
