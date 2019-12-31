@@ -9,7 +9,7 @@
 Just the basics to get the container running:
 
 ```shell
-docker run --rm --name bazarr -p 6767:6767 -v /<host_folder>:/config hotio/bazarr
+docker run --rm --name bazarr -p 6767:6767 -v /<host_folder_config>:/config hotio/bazarr
 ```
 
 The environment variables below are all optional, the values you see are the defaults.
