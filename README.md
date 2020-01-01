@@ -3,6 +3,7 @@
 [![GitHub](https://img.shields.io/badge/source-github-lightgrey)](https://github.com/hotio/docker-bazarr)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hotio/bazarr)](https://hub.docker.com/r/hotio/bazarr)
 [![Discord](https://img.shields.io/discord/610068305893523457?color=738ad6&label=discord&logo=discord&logoColor=white)](https://discord.gg/3SnkuKp)
+[![Upstream](https://img.shields.io/badge/upstream-project-yellow)](https://github.com/morpheus65535/bazarr)
 
 ## Starting the container
 
