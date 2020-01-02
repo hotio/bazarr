@@ -8,11 +8,11 @@ EXPOSE 6767
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
         python3 python3-distutils libxml2 libxslt1.1 unrar ffmpeg \
-        python3-pip build-essential python3-all-dev python3-setuptools libxml2-dev libxslt1-dev && \
+        python3-pip python3-setuptools && \
 # https://raw.githubusercontent.com/morpheus65535/bazarr/master/requirements.txt
     pip3 --no-cache-dir install lxml==4.3.0 && \
 # clean up
-    apt purge -y python3-pip build-essential python3-all-dev python3-setuptools libxml2-dev libxslt1-dev && \
+    apt purge -y python3-pip python3-setuptools && \
     apt autoremove -y && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
