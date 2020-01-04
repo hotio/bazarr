@@ -1,4 +1,4 @@
-FROM hotio/base@sha256:a659f7957ff86c8418eb5b3800f026a8f9ca1c2a710acee156158958af5bd0d7
+FROM hotio/base@sha256:0754c8b551eb4b4c795fa68067a8cd553b3c618320e5af57e99b46486c445cf9
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
@@ -17,7 +17,7 @@ RUN apt update && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-ARG BAZARR_VERSION=925f238927999db8dc378aa7357de824d7a10505
+ARG BAZARR_VERSION=b3b15252eab87ae418b643afbd81dc397e4c9677
 
 # install app
 RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/${BAZARR_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
