@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        branch: [stable, unstable, flask]
+        branch: [stable, unstable]
     steps:
     - uses: actions/checkout@master
       with:
