@@ -1,6 +1,6 @@
 # bazarr
 
-![Logo](https://raw.githubusercontent.com/hotio/unraid-templates/master/hotio/img/bazarr.png)  
+<img src="https://raw.githubusercontent.com/hotio/unraid-templates/master/hotio/img/bazarr.png" alt="Logo" height="130" width="130">
 
 [![GitHub](https://img.shields.io/badge/source-github-lightgrey)](https://github.com/hotio/docker-bazarr)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hotio/bazarr)](https://hub.docker.com/r/hotio/bazarr)
