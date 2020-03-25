@@ -278,7 +278,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    target: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${TAG_VERSION=f6c303e2b576237d9908ce298429f18bc7e437d5}
+    target: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${TAG_VERSION=92497a88229d8274663f33193069c62eb47025e0}
     template: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}-OS-ARCH
     platforms:
       - linux/amd64
@@ -318,7 +318,7 @@ steps:
       from_secret: discord_id
     DISCORD_TOKEN:
       from_secret: discord_token
-    VERSION_FIELD: ${TAG_VERSION=f6c303e2b576237d9908ce298429f18bc7e437d5}
+    VERSION_FIELD: ${TAG_VERSION=92497a88229d8274663f33193069c62eb47025e0}
   commands:
     - curl -fsSL https://gist.githubusercontent.com/hotio/d490b6447ddde9634475ddacbc85d8c1/raw/discord-build-notify.sh > discord-build-notify.sh
     - bash discord-build-notify.sh
