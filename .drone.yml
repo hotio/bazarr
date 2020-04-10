@@ -342,3 +342,4 @@ services:
 
 depends_on:
   - manifest
+
