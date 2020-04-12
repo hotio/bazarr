@@ -1,4 +1,4 @@
-FROM hotio/base@sha256:9c7833cc31199260454fff82e03c29eea7211ae2bb128b3ba4b620c0d5c2b018
+FROM hotio/base@sha256:737c12d432de3670087aac05bf51e3fb42b1d797699fedafae5585b61e79285e
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
@@ -6,7 +6,7 @@ EXPOSE 6767
 
 # install packages
 RUN apt update && \
-    apt install -y --no-install-recommends --no-install-suggests --no-upgrade \
+    apt install -y --no-install-recommends --no-install-suggests \
         python3-distutils libxml2 libxslt1.1 ffmpeg \
         python3-pip python3-setuptools build-essential python3-all-dev libxml2-dev libxslt1-dev && \
 # https://raw.githubusercontent.com/morpheus65535/bazarr/master/requirements.txt
