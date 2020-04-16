@@ -9,10 +9,21 @@ RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
         python3-distutils libxml2 libxslt1.1 ffmpeg \
         python3-pip python3-setuptools && \
+ # install Subsync build dependencies
+    apt install -y git swig libsphinxbase-dev \
+        libpocketsphinx-dev libavutil-dev libswscale-dev \
+        libavformat-dev libavdevice-dev && \
+ # install Subsync
+    mkdir build && \
+    cd build && \
+    git -b '0.15' https://github.com/sc0ty/subsync.git && \
+    cd subsync && \
+    pip3 install .
+    rm -rf /build
 # https://raw.githubusercontent.com/morpheus65535/bazarr/master/requirements.txt
     pip3 install --no-cache-dir --upgrade lxml && \
 # clean up
-    apt purge -y python3-pip python3-setuptools && \
+    apt purge -y python3-pip python3-setuptools git && \
     apt autoremove -y && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
