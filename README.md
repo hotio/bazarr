@@ -45,7 +45,7 @@ Your bazarr configuration inside the container is stored in `/config/app`, to mi
 
 The tag `subsync` comes bundled with [subsync](https://github.com/sc0ty/subsync). Add the below post-processing command to your Bazarr settings.
 
-```
+```shell
 subsync --cli sync --sub-lang '{{subtitles_language_code3}}' --ref-lang '{{episode_language_code3}}' --sub '{{subtitles}}' --ref '{{episode}}' --out '{{subtitles}}' --overwrite
 ```
 
