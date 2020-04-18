@@ -41,6 +41,14 @@ You can also find tags that reference a commit or version number.
 
 Your bazarr configuration inside the container is stored in `/config/app`, to migrate from another container, you'd probably have to move your files from `/config` to `/config/app`.
 
+## SubSync
+
+The tag `subsync` comes bundled with [subsync](https://github.com/sc0ty/subsync). Add the below post-processing command to your Bazarr settings.
+
+```
+subsync --cli sync --sub-lang '{{subtitles_language_code3}}' --ref-lang '{{episode_language_code3}}' --sub '{{subtitles}}' --ref '{{episode}}' --out '{{subtitles}}' --overwrite
+```
+
 ## Executing your own scripts
 
 If you have a need to do additional stuff when the container starts or stops, you can mount your script with `-v /docker/host/my-script.sh:/etc/cont-init.d/99-my-script` to execute your script on container start or `-v /docker/host/my-script.sh:/etc/cont-finish.d/99-my-script` to execute it when the container stops. An example script can be seen below.
