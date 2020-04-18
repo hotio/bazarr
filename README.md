@@ -44,10 +44,10 @@ Your bazarr configuration inside the container is stored in `/config/app`, to mi
 
 ## SubSync
 
-The tags `stable-subsync` and `unstable-subsync` come bundled with [subsync](https://github.com/sc0ty/subsync). Add the below post-processing command to your Bazarr settings to execute subsync on subtitle download.
+The tags `stable-subsync` and `unstable-subsync` come bundled with [subsync](https://github.com/sc0ty/subsync). Add the below post-processing command to your Bazarr settings to execute subsync on subtitle download, adjust for your own personal needs according the subsync docs.
 
 ```shell
-subsync --cli sync --sub-lang '{{subtitles_language_code3}}' --ref-lang '{{episode_language_code3}}' --sub '{{subtitles}}' --ref '{{episode}}' --out '{{subtitles}}' --overwrite
+subsync --cli sync --sub '{{subtitles}}' --ref '{{episode}}' --out '{{subtitles}}' --overwrite
 ```
 
 ## Executing your own scripts
