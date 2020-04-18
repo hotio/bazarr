@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        branch: [stable, unstable, subsync]
+        branch: [stable, unstable, stable-subsync, unstable-subsync]
     steps:
     - uses: actions/checkout@master
       with:
