@@ -7,6 +7,7 @@ EXPOSE 6767
 # install packages
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
+        python3.8 \
         python3-distutils libxml2 libxslt1.1 ffmpeg \
         python3-pip python3-setuptools && \
 # https://raw.githubusercontent.com/morpheus65535/bazarr/master/requirements.txt
