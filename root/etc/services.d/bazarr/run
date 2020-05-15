@@ -12,4 +12,4 @@ redirect_cmd() {
 }
 
 # shellcheck disable=SC2086
-redirect_cmd exec s6-setuidgid hotio python3 "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}/app" ${ARGS}
+redirect_cmd exec s6-setuidgid hotio python3.8 "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}/app" ${ARGS}
