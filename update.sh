@@ -2,7 +2,7 @@
 
 if [[ ${1} == "screenshot" ]]; then
     SERVICE_IP="http://$(ping -c1 -4 service | sed -nE 's/^PING[^(]+\(([^)]+)\).*/\1/p'):6767"
-    NETWORK_IDLE="0"
+    NETWORK_IDLE="2"
     cd /usr/src/app && node <<EOF
 const puppeteer = require('puppeteer');
 
