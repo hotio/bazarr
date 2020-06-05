@@ -9,6 +9,7 @@ RUN apk add --no-cache --virtual=build-dependencies g++ gcc libxml2-dev libxslt-
 
 ARG BAZARR_VERSION
 RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/${BAZARR_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
+    rm -rf "${APP_DIR}/bin" && \
     chmod -R u=rwX,go=rX "${APP_DIR}"
 
 COPY root/ /
