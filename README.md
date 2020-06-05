@@ -48,7 +48,7 @@ Your bazarr configuration inside the container is stored in `/config/app`, to mi
 The tags `stable-ffsubsync` and `unstable-ffsubsync` come bundled with [ffsubsync](https://github.com/smacke/ffsubsync). Add the below post-processing command to your Bazarr settings to execute `ffsubsync` on subtitle download, adjust for your own personal needs according the subsync docs.
 
 ```shell
-ffsubsync "{{episode}}" -i "{{subtitles}}" -o "{{subtitles}}"
+ffsubsync "{{episode}}" -i "{{subtitles}}" -o "{{subtitles}}" >>/config/ffsubsync.log 2>&1
 ```
 
 ## Executing your own scripts
