@@ -1,27 +1,12 @@
-FROM hotio/base@sha256:b72d8aa27c6ea7922411a5629ba44af07d34c90aa04106aa950d112c5dd00223
-
-ARG DEBIAN_FRONTEND="noninteractive"
+FROM hotio/base@sha256:5c748f472fd4dda9c2332dbce09046f9b419d6776083ec17df1d4d8370eb5a0b
 
 EXPOSE 6767
 
-# install packages
-RUN apt update && \
-    apt install -y --no-install-recommends --no-install-suggests \
-        python3.8 \
-        python3-distutils libxml2 libxslt1.1 ffmpeg \
-        python3-pip python3-setuptools build-essential python3-all-dev libxml2-dev libxslt1-dev && \
-# https://raw.githubusercontent.com/morpheus65535/bazarr/master/requirements.txt
-    pip3 install --no-cache-dir --upgrade lxml && \
-# clean up
-    apt purge -y python3-pip python3-setuptools build-essential python3-all-dev libxml2-dev libxslt1-dev && \
-    apt autoremove -y && \
-    apt clean && \
-    rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+RUN apk add --no-cache ffmpeg python3 py3-lxml unrar unzip
 
 ARG BAZARR_VERSION
-
-# install app
-RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/v${BAZARR_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
+RUN curl -fsSL "https://github.com/morpheus65535/bazarr/archive/${BAZARR_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
+    rm -rf "${APP_DIR}/bin" "${APP_DIR}/screenshot" && \
     chmod -R u=rwX,go=rX "${APP_DIR}"
 
 COPY root/ /
