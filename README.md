@@ -28,13 +28,13 @@ The environment variables below are all optional, the values you see are the def
 
 ## Tags
 
-| Tag              | Description                          | Build Status                                                                                                                                                    | Last Updated                                                                                                                                                                      |
-| -----------------|--------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| latest           | The same as `stable`                 |                                                                                                                                                                 |                                                                                                                                                                                   |
-| stable           | Stable version                       | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/stable)](https://cloud.drone.io/hotio/docker-bazarr)           | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/stable)](https://github.com/hotio/docker-bazarr/commits/stable)                     |
-| unstable         | Unstable version, development branch | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/unstable)](https://cloud.drone.io/hotio/docker-bazarr)         | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/unstable)](https://github.com/hotio/docker-bazarr/commits/unstable)                 |
-| stable-subsync   | Stable version, subsync included     | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/stable-subsync)](https://cloud.drone.io/hotio/docker-bazarr)   | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/stable-subsync)](https://github.com/hotio/docker-bazarr/commits/stable-subsync)     |
-| unstable-subsync | Unstable version, subsync included   | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/unstable-subsync)](https://cloud.drone.io/hotio/docker-bazarr) | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/unstable-subsync)](https://github.com/hotio/docker-bazarr/commits/unstable-subsync) |
+| Tag                | Description                            | Build Status                                                                                                                                                      | Last Updated                                                                                                                                                                          |
+| -------------------|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| latest             | The same as `stable`                   |                                                                                                                                                                   |                                                                                                                                                                                       |
+| stable             | Stable version                         | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/stable)](https://cloud.drone.io/hotio/docker-bazarr)             | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/stable)](https://github.com/hotio/docker-bazarr/commits/stable)                         |
+| unstable           | Unstable version, development branch   | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/unstable)](https://cloud.drone.io/hotio/docker-bazarr)           | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/unstable)](https://github.com/hotio/docker-bazarr/commits/unstable)                     |
+| stable-ffsubsync   | Stable version, ffsubsync included     | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/stable-ffsubsync)](https://cloud.drone.io/hotio/docker-bazarr)   | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/stable-ffsubsync)](https://github.com/hotio/docker-bazarr/commits/stable-ffsubsync)     |
+| unstable-ffsubsync | Unstable version, ffsubsync included   | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/unstable-ffsubsync)](https://cloud.drone.io/hotio/docker-bazarr) | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/unstable-ffsubsync)](https://github.com/hotio/docker-bazarr/commits/unstable-ffsubsync) |
 
 You can also find tags that reference a commit or version number.
 
@@ -42,12 +42,12 @@ You can also find tags that reference a commit or version number.
 
 Your bazarr configuration inside the container is stored in `/config/app`, to migrate from another container, you'd probably have to move your files from `/config` to `/config/app`.
 
-## SubSync
+## FFsubsync
 
-The tags `stable-subsync` and `unstable-subsync` come bundled with [subsync](https://github.com/sc0ty/subsync). Add the below post-processing command to your Bazarr settings to execute subsync on subtitle download, adjust for your own personal needs according the subsync docs.
+The tags `stable-ffsubsync` and `unstable-ffsubsync` come bundled with [ffsubsync](https://github.com/smacke/ffsubsync). Add the below post-processing command to your Bazarr settings to execute `ffsubsync` on subtitle download, adjust for your own personal needs according the subsync docs.
 
 ```shell
-subsync --cli sync --sub "{{subtitles}}" --ref "{{episode}}" --out "{{subtitles}}" --overwrite
+ffsubsync "{{episode}}" -i "{{subtitles}}" -o "{{subtitles}}"
 ```
 
 ## Executing your own scripts
