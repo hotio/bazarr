@@ -34,22 +34,12 @@ The environment variables below are all optional, the values you see are the def
 | latest             | The same as `stable`                   |                                                                                                                                                                   |                                                                                                                                                                                       |
 | stable             | Stable version                         | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/stable)](https://cloud.drone.io/hotio/docker-bazarr)             | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/stable)](https://github.com/hotio/docker-bazarr/commits/stable)                         |
 | unstable           | Unstable version, development branch   | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/unstable)](https://cloud.drone.io/hotio/docker-bazarr)           | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/unstable)](https://github.com/hotio/docker-bazarr/commits/unstable)                     |
-| stable-ffsubsync   | Stable version, ffsubsync included     | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/stable-ffsubsync)](https://cloud.drone.io/hotio/docker-bazarr)   | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/stable-ffsubsync)](https://github.com/hotio/docker-bazarr/commits/stable-ffsubsync)     |
-| unstable-ffsubsync | Unstable version, ffsubsync included   | [![Build Status](https://cloud.drone.io/api/badges/hotio/docker-bazarr/status.svg?ref=refs/heads/unstable-ffsubsync)](https://cloud.drone.io/hotio/docker-bazarr) | [![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hotio/docker-bazarr/unstable-ffsubsync)](https://github.com/hotio/docker-bazarr/commits/unstable-ffsubsync) |
 
 You can also find tags that reference a commit or version number.
 
 ## Configuration location
 
 Your bazarr configuration inside the container is stored in `/config/app`, to migrate from another container, you'd probably have to move your files from `/config` to `/config/app`.
-
-## FFsubsync
-
-The tags `stable-ffsubsync` and `unstable-ffsubsync` come bundled with [ffsubsync](https://github.com/smacke/ffsubsync). Add the below post-processing command to your Bazarr settings to execute `ffsubsync` on subtitle download, adjust for your own personal needs according the subsync docs.
-
-```shell
-ffsubsync "{{episode}}" -i "{{subtitles}}" -o "{{subtitles}}" >>/config/ffsubsync.log 2>&1
-```
 
 ## Executing your own scripts
 
