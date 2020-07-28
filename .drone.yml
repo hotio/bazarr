@@ -41,7 +41,7 @@ steps:
     tags:
       - ${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}-${DRONE_STAGE_OS}-${DRONE_STAGE_ARCH}
     build_args:
-      - BAZARR_VERSION=${BAZARR_VERSION=ed5fb86080adbbc8545b8d54ed2982965cab5c4c}
+      - BAZARR_VERSION=${BAZARR_VERSION=9df87c0e2ba6d4bcb0ec4f5b2777e1cf324eebed}
 
 depends_on:
   - checks
@@ -107,7 +107,7 @@ steps:
     tags:
       - ${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}-${DRONE_STAGE_OS}-${DRONE_STAGE_ARCH}
     build_args:
-      - BAZARR_VERSION=${BAZARR_VERSION=ed5fb86080adbbc8545b8d54ed2982965cab5c4c}
+      - BAZARR_VERSION=${BAZARR_VERSION=9df87c0e2ba6d4bcb0ec4f5b2777e1cf324eebed}
 
 depends_on:
   - checks
@@ -173,7 +173,7 @@ steps:
     tags:
       - ${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}-${DRONE_STAGE_OS}-${DRONE_STAGE_ARCH}
     build_args:
-      - BAZARR_VERSION=${BAZARR_VERSION=ed5fb86080adbbc8545b8d54ed2982965cab5c4c}
+      - BAZARR_VERSION=${BAZARR_VERSION=9df87c0e2ba6d4bcb0ec4f5b2777e1cf324eebed}
 
 depends_on:
   - checks
@@ -284,7 +284,7 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    target: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${BAZARR_VERSION=ed5fb86080adbbc8545b8d54ed2982965cab5c4c}
+    target: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${BAZARR_VERSION=9df87c0e2ba6d4bcb0ec4f5b2777e1cf324eebed}
     template: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}-OS-ARCH
     platforms:
       - linux/amd64
@@ -313,7 +313,7 @@ steps:
   pull: always
   user: root
   environment:
-    VERSION_FIELD: ${BAZARR_VERSION=ed5fb86080adbbc8545b8d54ed2982965cab5c4c}
+    VERSION_FIELD: ${BAZARR_VERSION=9df87c0e2ba6d4bcb0ec4f5b2777e1cf324eebed}
   commands:
     - apk add --no-cache curl iputils bash coreutils
     - bash update.sh checkservice
@@ -328,7 +328,7 @@ steps:
       from_secret: discord_id
     DISCORD_TOKEN:
       from_secret: discord_token
-    VERSION_FIELD: ${BAZARR_VERSION=ed5fb86080adbbc8545b8d54ed2982965cab5c4c}
+    VERSION_FIELD: ${BAZARR_VERSION=9df87c0e2ba6d4bcb0ec4f5b2777e1cf324eebed}
   commands:
     - curl -fsSL https://gist.githubusercontent.com/hotio/d490b6447ddde9634475ddacbc85d8c1/raw/discord-build-notify.sh > discord-build-notify.sh
     - bash discord-build-notify.sh
