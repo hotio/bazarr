@@ -48,8 +48,8 @@ jobs:
             --build-arg LABEL_SOURCE="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${GITHUB_REF//refs\/heads\//}" \
             --build-arg LABEL_VENDOR="${GITHUB_REPOSITORY%/*}" \
             --build-arg LABEL_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/master/README.md" \
-            --build-arg LABEL_VERSION="${BAZARR_VERSION=0355c2f49d7d47a4e39aa59a876d2d330d724daf}" \
-            --build-arg BAZARR_VERSION="${BAZARR_VERSION=0355c2f49d7d47a4e39aa59a876d2d330d724daf}" \
+            --build-arg LABEL_VERSION="${BAZARR_VERSION=e75e6684299e9b649e95ca67e6b45f4d7456740e}" \
+            --build-arg BAZARR_VERSION="${BAZARR_VERSION=e75e6684299e9b649e95ca67e6b45f4d7456740e}" \
             --file ./${ARCHITECTURE}.Dockerfile ./
 
       - name: Prepare for tests
@@ -97,11 +97,11 @@ jobs:
             --amend ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${GITHUB_SHA:0:7}-${GITHUB_RUN_NUMBER}-linux-arm-v7 \
             --amend ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${GITHUB_SHA:0:7}-${GITHUB_RUN_NUMBER}-linux-arm64
           docker manifest push ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}
-          docker manifest create ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${BAZARR_VERSION=0355c2f49d7d47a4e39aa59a876d2d330d724daf} \
+          docker manifest create ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${BAZARR_VERSION=e75e6684299e9b649e95ca67e6b45f4d7456740e} \
             --amend ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${GITHUB_SHA:0:7}-${GITHUB_RUN_NUMBER}-linux-amd64 \
             --amend ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${GITHUB_SHA:0:7}-${GITHUB_RUN_NUMBER}-linux-arm-v7 \
             --amend ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${GITHUB_SHA:0:7}-${GITHUB_RUN_NUMBER}-linux-arm64
-          docker manifest push ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${BAZARR_VERSION=0355c2f49d7d47a4e39aa59a876d2d330d724daf}
+          docker manifest push ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${BAZARR_VERSION=e75e6684299e9b649e95ca67e6b45f4d7456740e}
           docker manifest create ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${GITHUB_SHA:0:7} \
             --amend ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${GITHUB_SHA:0:7}-${GITHUB_RUN_NUMBER}-linux-amd64 \
             --amend ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${GITHUB_SHA:0:7}-${GITHUB_RUN_NUMBER}-linux-arm-v7 \
@@ -118,7 +118,7 @@ jobs:
       - name: Check docker manifest
         run: |
           docker manifest inspect ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}
-          docker manifest inspect ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${BAZARR_VERSION=0355c2f49d7d47a4e39aa59a876d2d330d724daf}
+          docker manifest inspect ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${BAZARR_VERSION=e75e6684299e9b649e95ca67e6b45f4d7456740e}
           docker manifest inspect ${GITHUB_REPOSITORY//docker-/}:${GITHUB_REF//refs\/heads\//}-${GITHUB_SHA:0:7}
           if [[ ${GITHUB_REF//refs\/heads\//} == stable ]]; then
             docker manifest inspect ${GITHUB_REPOSITORY//docker-/}:latest
@@ -137,4 +137,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl -u "${GITHUB_REPOSITORY%/*}:${GITHUB_TOKEN}" -fsSL https://gist.githubusercontent.com/${GITHUB_REPOSITORY%/*}/3d98159d47e0bf5eccbff221f1288472/raw/discord-action-notify.sh > discord-action-notify.sh
-          export VERSION_FIELD=${BAZARR_VERSION=0355c2f49d7d47a4e39aa59a876d2d330d724daf} && bash discord-action-notify.sh
+          export VERSION_FIELD=${BAZARR_VERSION=e75e6684299e9b649e95ca67e6b45f4d7456740e} && bash discord-action-notify.sh
