@@ -48,8 +48,8 @@ jobs:
             --build-arg LABEL_SOURCE="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${GITHUB_REF//refs\/heads\//}" \
             --build-arg LABEL_VENDOR="${GITHUB_REPOSITORY%/*}" \
             --build-arg LABEL_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/master/README.md" \
-            --build-arg LABEL_VERSION="${BAZARR_VERSION=4c1962245615f278a503cfe1b93c9e8e8b211159}" \
-            --build-arg BAZARR_VERSION="${BAZARR_VERSION=4c1962245615f278a503cfe1b93c9e8e8b211159}" \
+            --build-arg LABEL_VERSION="${BAZARR_VERSION=408d0cd2534694c2f247df45b8d9eea75051ffac}" \
+            --build-arg BAZARR_VERSION="${BAZARR_VERSION=408d0cd2534694c2f247df45b8d9eea75051ffac}" \
             --file ./${ARCHITECTURE}.Dockerfile ./
 
       - name: Push to GitHub registry
@@ -111,8 +111,8 @@ jobs:
             TAG="${TAG_BASE}-${GITHUB_SHA:0:7}-${GITHUB_RUN_NUMBER}"
             docker manifest create ${registry}/${TAG_BASE} --amend ${registry}/${TAG}-linux-amd64 --amend ${registry}/${TAG}-linux-arm-v7 --amend ${registry}/${TAG}-linux-arm64
             docker manifest push   ${registry}/${TAG_BASE}
-            docker manifest create ${registry}/${TAG_BASE}-${BAZARR_VERSION=4c1962245615f278a503cfe1b93c9e8e8b211159} --amend ${registry}/${TAG}-linux-amd64 --amend ${registry}/${TAG}-linux-arm-v7 --amend ${registry}/${TAG}-linux-arm64
-            docker manifest push   ${registry}/${TAG_BASE}-${BAZARR_VERSION=4c1962245615f278a503cfe1b93c9e8e8b211159}
+            docker manifest create ${registry}/${TAG_BASE}-${BAZARR_VERSION=408d0cd2534694c2f247df45b8d9eea75051ffac} --amend ${registry}/${TAG}-linux-amd64 --amend ${registry}/${TAG}-linux-arm-v7 --amend ${registry}/${TAG}-linux-arm64
+            docker manifest push   ${registry}/${TAG_BASE}-${BAZARR_VERSION=408d0cd2534694c2f247df45b8d9eea75051ffac}
             docker manifest create ${registry}/${TAG_BASE}-${GITHUB_SHA:0:7} --amend ${registry}/${TAG}-linux-amd64 --amend ${registry}/${TAG}-linux-arm-v7 --amend ${registry}/${TAG}-linux-arm64
             docker manifest push   ${registry}/${TAG_BASE}-${GITHUB_SHA:0:7}
             if [[ ${GITHUB_REF//refs\/heads\//} == stable ]]; then
@@ -134,4 +134,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl -u "${GITHUB_REPOSITORY%/*}:${GITHUB_TOKEN}" -fsSL https://gist.githubusercontent.com/${GITHUB_REPOSITORY%/*}/3d98159d47e0bf5eccbff221f1288472/raw/discord-action-notify.sh > discord-action-notify.sh
-          export VERSION_FIELD=${BAZARR_VERSION=4c1962245615f278a503cfe1b93c9e8e8b211159} && bash discord-action-notify.sh
+          export VERSION_FIELD=${BAZARR_VERSION=408d0cd2534694c2f247df45b8d9eea75051ffac} && bash discord-action-notify.sh
