@@ -3,7 +3,7 @@ FROM hotio/base@sha256:12a997c30659bf971cda4b0225148f7cdd149f5d14992f65471a92dab
 EXPOSE 6767
 
 RUN apk add --no-cache ffmpeg python3 py3-lxml py3-numpy unrar unzip && \
-    apk add --no-cache --virtual=build-dependencies py3-pip && \
+    apk add --no-cache --virtual=build-dependencies py3-pip py3-setuptools gcc python3-dev musl-dev && \
     pip3 install --no-cache-dir --upgrade \
         webrtcvad-wheels && \
     apk del --purge build-dependencies
