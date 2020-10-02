@@ -1,6 +1,6 @@
 # bazarr
 
-<img src="https://raw.githubusercontent.com/hotio/docker-bazarr/master/img/bazarr.png" alt="Logo" height="130" width="130">
+<img src="https://hotio.dev/img/bazarr.png" alt="Logo" height="130" width="130">
 
 ![Base](https://img.shields.io/badge/base-alpine-blue)
 [![GitHub](https://img.shields.io/badge/source-github-lightgrey)](https://github.com/hotio/docker-bazarr)
