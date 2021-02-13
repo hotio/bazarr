@@ -3,5 +3,4 @@
 
 umask "${UMASK}"
 
-# shellcheck disable=SC2086
-exec s6-setuidgid hotio python3 "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}" ${ARGS}
+exec s6-setuidgid hotio python3 "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}"
