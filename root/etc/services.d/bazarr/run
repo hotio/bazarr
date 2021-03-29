@@ -3,4 +3,4 @@
 
 umask "${UMASK}"
 
-exec s6-setuidgid hotio python3 "${APP_DIR}/bazarr.py" --no-update --config "${CONFIG_DIR}"
+exec s6-setuidgid hotio python3 "${APP_DIR}/bin/bazarr.py" --no-update --config "${CONFIG_DIR}"
