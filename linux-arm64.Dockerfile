@@ -12,8 +12,7 @@ ARG VERSION
 ARG PACKAGE_VERSION=${VERSION}
 ARG BBRANCH
 RUN mkdir "${APP_DIR}/bin" && \
-    curl -fsSL "https://github.com/morpheus65535/bazarr/archive/v${VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}/bin" --strip-components=1 && \
-    rm -rf "${APP_DIR}/bin/bin" "${APP_DIR}/bin/screenshot" && \
+    zipfile="/tmp/app.zip" && curl -fsSL -o "${zipfile}" "https://github.com/morpheus65535/bazarr/releases/download/v${VERSION}/bazarr.zip" && unzip -q "${zipfile}" -d "${APP_DIR}/bin" && rm "${zipfile}" && \
     echo -e "PackageVersion=${PACKAGE_VERSION}\nPackageAuthor=[hotio](https://github.com/hotio)\nUpdateMethod=Docker\nBranch=${BBRANCH}" > "${APP_DIR}/package_info" && \
     chmod -R u=rwX,go=rX "${APP_DIR}"
 
