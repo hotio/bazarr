@@ -15,7 +15,7 @@ elif [[ ${1} == "tests" ]]; then
     echo "Check if app works..."
     app_url="http://localhost:6767"
     docker run --network host -d --name service "${2}"
-    currenttime=$(date +%s); maxtime=$((currenttime+60)); while (! curl -fsSL "${app_url}" > /dev/null) && [[ "$currenttime" -lt "$maxtime" ]]; do sleep 1; currenttime=$(date +%s); done
+    currenttime=$(date +%s); maxtime=$((currenttime+120)); while (! curl -fsSL "${app_url}" > /dev/null) && [[ "$currenttime" -lt "$maxtime" ]]; do sleep 1; currenttime=$(date +%s); done
     curl -fsSL "${app_url}" > /dev/null
     status=$?
     echo "Show docker logs..."
