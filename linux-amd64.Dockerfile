@@ -2,8 +2,8 @@ FROM ghcr.io/hotio/base@sha256:f1c05cf31c2107cc8235502077750e3d92d0f16a0fa46906a
 
 EXPOSE 6767
 
-RUN apk add --no-cache ffmpeg python3 py3-lxml py3-numpy py3-gevent py3-cryptography unrar unzip && \
-    apk add --no-cache --virtual=build-dependencies py3-pip py3-setuptools gcc python3-dev musl-dev && \
+RUN apk add --no-cache ffmpeg python3 py3-lxml py3-numpy py3-gevent py3-cryptography py3-setuptools unrar unzip && \
+    apk add --no-cache --virtual=build-dependencies py3-pip gcc python3-dev musl-dev && \
     pip3 install --no-cache-dir --upgrade \
         gevent-websocket>=0.10.1 \
         webrtcvad-wheels>=2.0.10 && \
