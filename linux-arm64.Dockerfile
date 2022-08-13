@@ -2,7 +2,7 @@ FROM cr.hotio.dev/hotio/base@sha256:34b65e393c44097ad1697e720cb70d2b8fb001236158
 
 EXPOSE 6767
 
-RUN apk add --no-cache ffmpeg python3 py3-lxml py3-numpy py3-gevent py3-cryptography py3-setuptools unrar unzip && \
+RUN apk add --no-cache ffmpeg python3 py3-lxml py3-numpy py3-gevent py3-cryptography py3-setuptools unzip && \
     apk add --no-cache --virtual=build-dependencies py3-pip gcc python3-dev musl-dev && \
     pip3 install --no-cache-dir --upgrade \
         "gevent-websocket>=0.10.1" \
