@@ -1,4 +1,5 @@
 {
+  "description": "Releases",
   "version": "1.1.1",
   "changelog": "https://github.com/morpheus65535/bazarr/compare/v1.1.0...v1.1.1",
   "bbranch": "master",
