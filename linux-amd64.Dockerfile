@@ -5,7 +5,7 @@ FROM ${UPSTREAM_IMAGE}@${UPSTREAM_DIGEST_AMD64}
 EXPOSE 6767
 VOLUME ["${CONFIG_DIR}"]
 
-RUN apk add --no-cache ffmpeg python3 py3-lxml py3-numpy py3-gevent py3-cryptography py3-setuptools unzip && \
+RUN apk add --no-cache ffmpeg python3 py3-lxml py3-numpy py3-gevent py3-cryptography py3-setuptools py3-psycopg2 unzip && \
     apk add --no-cache --virtual=build-dependencies py3-pip gcc python3-dev musl-dev && \
     pip3 install --no-cache-dir --upgrade \
         "gevent-websocket>=0.10.1" \
