@@ -17,6 +17,7 @@ RUN apk add --no-cache mediainfo ffmpeg python3 py3-pip unzip && \
     apk add --no-cache --virtual=build-dependencies g++ gcc python3-dev musl-dev && \
     pip3 install --upgrade pip && \
     pip3 install -r "${APP_DIR}/bin/requirements.txt" && \
+    pip3 install -r "${APP_DIR}/bin/postgres-requirements.txt" && \
     apk del --purge build-dependencies
 
 COPY root/ /
