@@ -1,7 +1,7 @@
 {
   "description": "Pre-releases",
-  "version": "1.2.2-beta.5",
-  "changelog": "https://github.com/morpheus65535/bazarr/compare/v1.2.2-beta.4...v1.2.2-beta.5",
+  "version": "1.2.2-beta.6",
+  "changelog": "https://github.com/morpheus65535/bazarr/compare/v1.2.2-beta.5...v1.2.2-beta.6",
   "bbranch": "development",
   "upstream_image": "cr.hotio.dev/hotio/base",
   "upstream_tag": "alpine",
