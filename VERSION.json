@@ -1,8 +1,8 @@
 {
   "latest": true,
   "description": "Releases",
-  "version": "1.2.4",
-  "changelog": "https://github.com/morpheus65535/bazarr/compare/v1.2.3...v1.2.4",
+  "version": "1.3.0",
+  "changelog": "https://github.com/morpheus65535/bazarr/compare/v1.2.4...v1.3.0",
   "bbranch": "master",
   "upstream_image": "ghcr.io/hotio/base",
   "upstream_tag": "alpine",
