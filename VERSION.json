@@ -1,7 +1,7 @@
 {
   "description": "Pre-releases",
-  "version": "1.4.1-beta.22",
-  "changelog": "https://github.com/morpheus65535/bazarr/compare/v1.4.1-beta.21...v1.4.1-beta.22",
+  "version": "1.4.1",
+  "changelog": "https://github.com/morpheus65535/bazarr/compare/v1.4.1-beta.22...v1.4.1",
   "bbranch": "development",
   "upstream_image": "ghcr.io/hotio/base",
   "upstream_tag": "alpinevpn",
