@@ -2,13 +2,13 @@
   "nightly": {
     "description": "Pre-releases",
     "hide": false,
-    "last_updated": "2024-10-02T02:16:01.000Z",
-    "last_updated_url": "https://github.com/hotio/bazarr/actions/runs/11136593518",
+    "last_updated": "2024-10-08T06:17:40.000Z",
+    "last_updated_url": "https://github.com/hotio/bazarr/actions/runs/11229641163",
     "latest": false,
     "tags": [
       "nightly",
-      "nightly-1.4.5",
-      "nightly-e859a04"
+      "nightly-1.4.6-beta.0",
+      "nightly-b6f5d5e"
     ]
   },
   "release": {
