@@ -14,13 +14,13 @@
   "release": {
     "description": "Releases",
     "hide": false,
-    "last_updated": "2025-12-23T12:11:07.000Z",
-    "last_updated_url": "https://github.com/hotio/bazarr/actions/runs/20460125903",
+    "last_updated": "2025-12-23T13:40:09.000Z",
+    "last_updated_url": "https://github.com/hotio/bazarr/actions/runs/20461988583",
     "latest": true,
     "tags": [
       "release",
       "release-1.5.3",
-      "release-e82bd6f"
+      "release-75300d8"
     ]
   }
 }
