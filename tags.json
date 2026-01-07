@@ -17,17 +17,17 @@
     ]
   },
   "release": {
-    "commit_message": "Version update: 1.5.3 => 1.5.4",
-    "commit_sha": "4a80df99b140b53f97c4aa37d39f669c2cc5dce4",
+    "commit_message": "Upstream image update",
+    "commit_sha": "95a9416dd273a95f8b1f68cf7c08e0a088ad5d69",
     "description": "Releases",
     "hide": false,
-    "last_updated": "2026-01-04T22:50:39.000Z",
-    "last_updated_url": "https://github.com/hotio/bazarr/actions/runs/20700327080",
+    "last_updated": "2026-01-07T03:57:11.000Z",
+    "last_updated_url": "https://github.com/hotio/bazarr/actions/runs/20770096329",
     "latest": true,
     "tags": [
       "release",
       "release-1.5.4",
-      "release-4a80df9",
+      "release-95a9416",
       "release-v1",
       "release-v1.5",
       "release-v1.5.4"
