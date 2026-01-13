@@ -1,5 +1,5 @@
 {
-  "bbranch": "development",
+  "version_branch": "development",
   "description": "Pre-releases",
   "test_amd64": true,
   "test_arm64": true,
