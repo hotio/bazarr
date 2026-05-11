@@ -1,7 +1,7 @@
 {
   "description": "Releases",
   "latest": true,
-  "packages_hash": "",
+  "packages_hash": "36cb34170bf91ffbe323504a8c668a53c343c24c",
   "test_amd64": true,
   "test_arm64": true,
   "test_url": "http://localhost:6767/system/status",
