@@ -1,6 +1,5 @@
 {
   "description": "Pre-releases",
-  "packages_hash": "9eab537d7cd858c54e70f9ae13eab616b7991d73",
   "test_amd64": true,
   "test_arm64": true,
   "test_url": "http://localhost:6767/system/status",
