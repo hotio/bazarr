@@ -1,8 +1,12 @@
 #!/bin/bash
-set -exuo pipefail
+set -euo pipefail
 
-version=$(curl -fsSL --header "Authorization: Bearer ${GITHUB_TOKEN}" "https://api.github.com/repos/morpheus65535/bazarr/releases/latest" | jq -re .tag_name)
-json=$(cat meta.json)
-jq --sort-keys \
-    --arg version "${version//v/}" \
-    '.version = $version' <<< "${json}" | tee meta.json
+while read -r line; do
+    key="${line%%=*}"
+    key="${key%__command}"
+    command="${line#*=}"
+    value=$(eval "${command}")
+    json=$(cat meta.json)
+    jq --sort-keys --arg key "$key" --arg value "$value" '.[$key] = $value' <<< "${json}" > meta.json
+    echo "Result: [${key}] [${command}] [${value}]"
+done < <(jq -r 'to_entries[] | [(.key),.value] | join("=")' < meta.json | grep '__command')
