@@ -1,5 +1,5 @@
 alsa-lib=1.2.14-r2
-aom-libs=3.13.1-r1
+aom-libs=3.14.1-r0
 cjson=1.7.19-r1
 dbus-libs=1.16.2-r1
 ffmpeg-libavcodec=8.0.1-r1
